@@ -1,0 +1,44 @@
+<div class="content">
+    <div class="header">
+        <h1>Picture Upload - NodeJS</h1>
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-4"> </div>
+
+        <div class="col-md-4">
+            <div class="input-group">
+                <div class="">
+                    <span class="input-group-text upload" (click)="upload()" id="btnUpload">Upload</span>
+                </div>
+                <div class="custom-file">
+                    <form action="/api/upload" method="post" enctype="multipart/form-data">
+                        <input (change)="fileChange($event)" type="file" class="custom-file-input" id="inputGroupFile01"
+                            aria-describedby="inputGroupFileAddon01">
+                        <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4"> </div>
+
+    </div>
+</div>
+
+<!-- <div class="content">
+    <div class="header">
+        <h1>Picture Upload - Firebase</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4"> </div>
+
+        <div class="col-md-4">
+            <input (change)="fileChange_FB($event)" type="file">
+        </div>
+
+        <div class="col-md-4"> </div>
+    </div>
+</div> -->
