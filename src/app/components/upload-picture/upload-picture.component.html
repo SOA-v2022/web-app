@@ -1,28 +1,21 @@
 <div class="content">
     <div class="header">
-        <h1>Picture Upload - NodeJS</h1>
+        <h2>Upload Picture</h2>
     </div>
 
     <div class="row">
 
-        <div class="col-md-4"> </div>
-
         <div class="col-md-4">
-            <div class="input-group">
-                <div class="">
-                    <span class="input-group-text upload" (click)="upload()" id="btnUpload">Upload</span>
-                </div>
-                <div class="custom-file">
-                    <form action="/api/upload" method="post" enctype="multipart/form-data">
-                        <input (change)="fileChange($event)" type="file" class="custom-file-input" id="inputGroupFile01"
-                            aria-describedby="inputGroupFileAddon01">
-                        <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-                    </form>
-                </div>
-            </div>
+            <label for="files" class="btn btn-outline-success mt-2">Select Image</label>
+            <input id="files" style="visibility:hidden;" type="file" accept="image/*" (change)="fileChange($event)">
+
+            <button class="btn btn-success" (click)="upload()" [disabled]="canUpload"
+            id="btnUpload">Upload</button>
         </div>
 
-        <div class="col-md-4"> </div>
+        <div class="col-md-8">
+            <img id="" *ngIf="imageSrc" [src]="imageSrc" alt="your image" class="img-fluid" />
+        </div>
 
     </div>
 </div>

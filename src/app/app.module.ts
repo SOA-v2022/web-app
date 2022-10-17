@@ -9,11 +9,15 @@ import { UploadFileService } from './services/upload-file.service';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideStorage,getStorage } from '@angular/fire/storage';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ResultsComponent } from './components/results/results.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UploadPictureComponent
+    UploadPictureComponent,
+    DashboardComponent,
+    ResultsComponent
   ],
   imports: [
     BrowserModule,
