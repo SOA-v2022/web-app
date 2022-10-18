@@ -8,8 +8,9 @@ export class UploadFileService {
 
   constructor(private http: HttpClient) { }
 
-  uploadFile(formData: any) {
-    let urlAPI = 'http://localhost:3000/api/uploadPicture';
+  uploadFile(formData: FormData) {
+    // let urlAPI = 'http://localhost:3000/api/uploadPicture';
+    let urlAPI = 'http://localhost:3000/uploadPicture';
     return this.http.post(urlAPI, formData);
   }
 }

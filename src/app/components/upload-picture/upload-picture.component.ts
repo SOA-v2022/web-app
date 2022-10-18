@@ -30,21 +30,28 @@ export class UploadPictureComponent implements OnInit {
   }
 
   preview(event: any): void {
+    // for (let i = 0; i < event.target.files.length; i++) {
     if (event.target.files && event.target.files[0]) {
       const file = event.target.files[0];
 
       const reader = new FileReader();
+      // reader.onload = e => this.imageSrc?.push(reader.result as string);
       reader.onload = e => this.imageSrc = reader.result as string;
 
       reader.readAsDataURL(file);
     }
+    // }
   }
 
   upload() {
-    let formData = new FormData();
+    let formData: FormData = new FormData();
     for (var i = 0; i < this.uploadedFiles!.length; i++) {
-      formData.append("uploads[]", this.uploadedFiles![i], this.uploadedFiles![i].name);
+      // formData.append("image", this.uploadedFiles![i], this.uploadedFiles![i].name);
+      formData.append("image", this.uploadedFiles![i]);
+      // formData.append("name", this.uploadedFiles![i].name);
     }
+    console.log(formData);
+
     this.uploadService.uploadFile(formData).subscribe((res) => {
       console.log('response received is ', res);
     });
