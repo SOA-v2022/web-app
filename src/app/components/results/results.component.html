@@ -1,3 +1,39 @@
 <div class="header">
     <h2>Results</h2>
 </div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-sm table-condensed">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Joy</th>
+                        <th scope="col">Anger</th>
+                        <th scope="col">Sorrow</th>
+                        <th scope="col">Surprise</th>
+                        <th scope="col">Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let sentiment of sentiments ; let i = index">
+                        <th scope="row">{{i+1}}</th>
+                        <td>{{sentiment.joy}}</td>
+                        <td>{{sentiment.anger}}</td>
+                        <td>{{sentiment.sorrow}}</td>
+                        <td>{{sentiment.surprise}}</td>
+                        <td>{{sentiment.time| date: 'YYYY-MM-dd hh:mm:ss a'}}</td>
+                    </tr>
+                    <tr>
+                        <th>Good</th>
+                        <td><strong>{{joy_prc | percent:'.2'}}</strong></td>
+                        <td><strong>{{anger_prc | percent:'.2'}}</strong></td>
+                        <td><strong>{{sorrow_prc | percent:'.2'}}</strong></td>
+                        <td><strong>{{surprise_prc | percent:'.2'}}</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
